@@ -334,6 +334,79 @@ footer{
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--surface-3);border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
+
+/* Back to top */
+.back-to-top{
+  position:fixed;bottom:2rem;right:2rem;z-index:200;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--border);
+  background:var(--surface-2);color:var(--text-secondary);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.back-to-top:hover{background:var(--accent);border-color:var(--accent);color:white;transform:translateY(-2px);box-shadow:0 6px 24px rgba(108,92,231,0.3)}
+.back-to-top svg{width:18px;height:18px}
+
+/* Export calendar button */
+.export-cal-btn{
+  padding:0.55rem 1rem;border-radius:var(--radius);
+  border:1px solid var(--border);background:var(--surface);
+  color:var(--text-secondary);font-size:0.8rem;font-weight:500;
+  cursor:pointer;transition:all var(--transition);
+  display:none;align-items:center;gap:6px;
+  white-space:nowrap;font-family:inherit;
+}
+.export-cal-btn.visible{display:flex}
+.export-cal-btn:hover{border-color:var(--green);color:var(--green);background:rgba(0,184,148,0.06)}
+.export-cal-btn svg{width:14px;height:14px}
+
+/* Keyboard hint */
+.kbd-hint{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  padding:2px 7px;border-radius:4px;
+  background:var(--surface-3);border:1px solid var(--border);
+  font-size:0.65rem;font-weight:600;color:var(--text-muted);
+  font-family:'Space Grotesk',monospace;pointer-events:none;
+  transition:opacity var(--transition);
+}
+.search-box:focus ~ .kbd-hint{opacity:0}
+
+/* Live / Up next badges */
+.live-badge,.upnext-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 8px;border-radius:100px;
+  font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;
+  margin-left:6px;vertical-align:middle;
+}
+.live-badge{
+  background:rgba(0,184,148,0.12);color:var(--green);border:1px solid rgba(0,184,148,0.25);
+}
+.live-badge .live-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--green);
+  animation:pulse 1.5s ease-in-out infinite;
+}
+.upnext-badge{
+  background:rgba(9,132,227,0.1);color:var(--blue);border:1px solid rgba(9,132,227,0.2);
+}
+.card.is-live{border-color:rgba(0,184,148,0.3);background:rgba(0,184,148,0.03)}
+.card.is-live::before{background:var(--green)!important;opacity:1}
+.card.is-upnext{border-color:rgba(9,132,227,0.15)}
+
+/* Card entrance animations */
+@keyframes cardIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.card{animation:cardIn 0.3s cubic-bezier(0.4,0,0.2,1) both}
+
+@media(max-width:640px){
+  .back-to-top{bottom:1.2rem;right:1.2rem;width:40px;height:40px}
+  .kbd-hint{display:none}
+  .export-cal-btn span.btn-label{display:none}
+}
 </style>
 </head>
 <body>
@@ -355,7 +428,12 @@ footer{
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </span>
         <input type="text" class="search-box" id="search" placeholder="Search sessions, speakers, topics...">
+        <span class="kbd-hint">/</span>
       </div>
+      <button class="export-cal-btn" id="exportCal" title="Export saved sessions to calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span class="btn-label">Export .ics</span>
+      </button>
       <button class="my-schedule-btn" id="toggleSaved">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
         My Schedule
@@ -386,7 +464,11 @@ footer{
 
 <main id="app"></main>
 
-<footer>AI Impact Summit 2026 &middot; Agenda Planner &middot; Bharat Mandapam, New Delhi</footer>
+<button class="back-to-top" id="backToTop" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<footer>AI Impact Summit 2026 &middot; Agenda Planner &middot; Bharat Mandapam, New Delhi &middot; <kbd style="font-size:0.65rem;padding:1px 5px;border-radius:3px;background:var(--surface-3);border:1px solid var(--border)">/</kbd> to search</footer>
 
 <script>
 const sessions=[
@@ -559,7 +641,28 @@ function toggleSave(id,e){
 
 function toggleCard(id){
   const el=$('c'+id);
-  if(el)el.classList.toggle('expanded');
+  if(!el)return;
+  const wasExpanded=el.classList.contains('expanded');
+  el.classList.toggle('expanded');
+  // Deep-link: update URL hash
+  if(!wasExpanded){history.replaceState(null,'','#session-'+id)}
+  else{history.replaceState(null,'',location.pathname+location.search)}
+}
+
+// Live status helper: returns 'live','upnext', or ''
+function getLiveStatus(s){
+  const now=new Date();
+  const year=2026,month=1; // Feb = month index 1
+  const sessionDate=new Date(year,month,s.day);
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const sDay=new Date(sessionDate.getFullYear(),sessionDate.getMonth(),sessionDate.getDate());
+  if(today.getTime()!==sDay.getTime())return '';
+  const mins=now.getHours()*60+now.getMinutes();
+  const start=toMin(s.time);
+  const end=start+60;
+  if(mins>=start&&mins<end)return 'live';
+  if(mins>=start-30&&mins<start)return 'upnext';
+  return '';
 }
 
 function render(){
@@ -593,11 +696,18 @@ function render(){
 
     Object.entries(timeGroups).forEach(([time,ss])=>{
       html+=`<div class="time-group"><div class="time-label"><span>${time}</span><div class="time-line"></div></div><div class="sessions-grid">`;
+      let cardIdx=0;
       ss.forEach(s=>{
         const isSaved=saved.includes(s.id);
         const isKeynote=s.cats.includes('keynote');
-        html+=`<div class="card day-${s.day} ${isSaved?'saved':''} ${isKeynote?'keynote':''}" id="c${s.id}" onclick="toggleCard(${s.id})">`;
-        html+=`<div class="card-header"><div class="card-title">${hl(s.title,q)}</div>`;
+        const live=getLiveStatus(s);
+        const liveClass=live==='live'?' is-live':live==='upnext'?' is-upnext':'';
+        const delay=Math.min(cardIdx*0.04,0.6);
+        html+=`<div class="card day-${s.day} ${isSaved?'saved':''} ${isKeynote?'keynote':''}${liveClass}" id="c${s.id}" onclick="toggleCard(${s.id})" style="animation-delay:${delay}s">`;
+        html+=`<div class="card-header"><div class="card-title">${hl(s.title,q)}`;
+        if(live==='live')html+=`<span class="live-badge"><span class="live-dot"></span>Live</span>`;
+        if(live==='upnext')html+=`<span class="upnext-badge">Up Next</span>`;
+        html+=`</div>`;
         html+=`<button class="save-star" onclick="toggleSave(${s.id},event)" title="${isSaved?'Remove':'Save'}">${isSaved?'&#9733;':'&#9734;'}</button></div>`;
         html+=`<div class="card-meta">`;
         html+=`<span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${s.loc}</span>`;
@@ -608,6 +718,7 @@ function render(){
         if(isKeynote)tags.push('<span class="tag keynote-tag">Keynote</span>');
         if(s.cats.includes('official'))tags.push('<span class="tag official-tag">Official</span>');
         if(tags.length)html+=`<div class="card-tags">${tags.join('')}</div>`;
+        cardIdx++;
         // Details
         html+=`<div class="card-details">`;
         if(s.desc)html+=`<p class="card-desc">${hl(s.desc,q)}</p>`;
@@ -629,6 +740,7 @@ function render(){
   $('app').innerHTML=html;
   $('statsBar').textContent=`${list.length} of ${sessions.length} sessions`+(saved.length?` \u00b7 ${saved.length} in your schedule`:'');
   $('scheduleCount').textContent=saved.length;
+  $('exportCal').classList.toggle('visible',saved.length>0);
 
   // Conflicts
   const cb=$('conflictBanner');
@@ -677,6 +789,73 @@ window.addEventListener('scroll',()=>{
 });
 
 render();
+
+// Keyboard shortcuts: / to focus search, Escape to clear
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){
+    e.preventDefault();$('search').focus();
+  }
+  if(e.key==='Escape'){
+    $('search').value='';query='';$('search').blur();render();
+  }
+});
+
+// Back to top
+$('backToTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+window.addEventListener('scroll',()=>{
+  $('backToTop').classList.toggle('visible',window.scrollY>400);
+},{passive:true});
+
+// Export .ics
+function pad2(n){return n<10?'0'+n:n}
+function icsDate(day,timeStr){
+  // Feb 2026, IST = UTC+5:30
+  const m=timeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if(!m)return '20260216T040000Z';
+  let h=+m[1],mn=+m[2];
+  if(m[3].toUpperCase()==='PM'&&h!==12)h+=12;
+  if(m[3].toUpperCase()==='AM'&&h===12)h=0;
+  // Convert IST to UTC: subtract 5:30
+  let uh=h-5,um=mn-30;
+  if(um<0){um+=60;uh--}
+  if(uh<0){uh+=24;day--}
+  return `2026${pad2(2)}${pad2(day)}T${pad2(uh)}${pad2(um)}00Z`;
+}
+$('exportCal').addEventListener('click',()=>{
+  if(!saved.length)return;
+  let cal='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//AI Impact Summit 2026//Agenda//EN\r\nCALSCALE:GREGORIAN\r\nX-WR-CALNAME:AI Impact Summit 2026\r\n';
+  sessions.filter(s=>saved.includes(s.id)).forEach(s=>{
+    const dtStart=icsDate(s.day,s.time);
+    // Assume ~1h duration
+    const mStart=toMin(s.time);
+    const endH=Math.floor((mStart+60)/60),endM=(mStart+60)%60;
+    const endStr=`${endH>12?endH-12:endH||12}:${pad2(endM)} ${endH>=12?'PM':'AM'}`;
+    const dtEnd=icsDate(s.day,endStr);
+    const desc=(s.desc||'')+(s.speakers.length?'\\nSpeakers: '+s.speakers.join(', '):'')+(s.partner?'\\nKnowledge Partner: '+s.partner:'');
+    cal+=`BEGIN:VEVENT\r\nDTSTART:${dtStart}\r\nDTEND:${dtEnd}\r\nSUMMARY:${s.title.replace(/,/g,'\\,')}\r\nLOCATION:${(s.loc+', Bharat Mandapam, New Delhi').replace(/,/g,'\\,')}\r\nDESCRIPTION:${desc.replace(/\n/g,'\\n')}\r\nEND:VEVENT\r\n`;
+  });
+  cal+='END:VCALENDAR';
+  const blob=new Blob([cal],{type:'text/calendar;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='ai-summit-2026-schedule.ics';
+  a.click();URL.revokeObjectURL(a.href);
+});
+
+// Deep-link: open session from URL hash on load
+(function handleHash(){
+  const hash=location.hash;
+  if(!hash||!hash.startsWith('#session-'))return;
+  const id=+hash.replace('#session-','');
+  if(!id)return;
+  setTimeout(()=>{
+    const el=$('c'+id);
+    if(el){
+      el.classList.add('expanded');
+      el.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  },100);
+})();
 </script>
 </body>
 </html>
