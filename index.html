@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Impact Summit 2026 | Bharat Mandapam, New Delhi</title>
+<meta name="description" content="Complete agenda and personal planner for the AI Impact Summit 2026 at Bharat Mandapam, New Delhi. February 16-20, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;
+  --surface:#12121a;
+  --surface-2:#1a1a27;
+  --surface-3:#222233;
+  --border:rgba(255,255,255,0.06);
+  --border-hover:rgba(255,255,255,0.12);
+  --text:#e8e8ed;
+  --text-secondary:#8888a0;
+  --text-muted:#55556a;
+  --accent:#6c5ce7;
+  --accent-glow:rgba(108,92,231,0.15);
+  --green:#00b894;
+  --blue:#0984e3;
+  --orange:#f39c12;
+  --pink:#e84393;
+  --cyan:#00cec9;
+  --red:#d63031;
+  --day16:#6c5ce7;
+  --day17:#00b894;
+  --day18:#0984e3;
+  --day19:#f39c12;
+  --day20:#e84393;
+  --radius:12px;
+  --radius-lg:16px;
+  --radius-xl:24px;
+  --shadow:0 1px 3px rgba(0,0,0,0.3),0 4px 12px rgba(0,0,0,0.2);
+  --shadow-lg:0 4px 24px rgba(0,0,0,0.4);
+  --transition:0.2s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* Hero */
+.hero{
+  position:relative;
+  padding:3rem 1.5rem 2rem;
+  text-align:center;
+  overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(108,92,231,0.15),transparent),
+             radial-gradient(ellipse 60% 40% at 80% 80%,rgba(0,184,148,0.08),transparent),
+             radial-gradient(ellipse 60% 40% at 20% 80%,rgba(232,67,147,0.08),transparent);
+  pointer-events:none;
+}
+.hero-content{position:relative;max-width:800px;margin:0 auto}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;border-radius:100px;
+  background:rgba(108,92,231,0.12);border:1px solid rgba(108,92,231,0.25);
+  font-size:0.72rem;font-weight:600;color:var(--accent);
+  text-transform:uppercase;letter-spacing:0.08em;
+  margin-bottom:1rem;
+}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:700;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  margin-bottom:0.5rem;
+  background:linear-gradient(135deg,#fff 0%,#c8c8e0 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  font-size:0.95rem;color:var(--text-secondary);margin-bottom:0.3rem;
+}
+.hero-date{
+  font-size:0.85rem;color:var(--text-muted);
+}
+
+/* Sticky controls */
+.controls-wrapper{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,15,0.85);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid var(--border);
+  padding:0.75rem 1rem;
+  transition:box-shadow var(--transition);
+}
+.controls-wrapper.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.5)}
+.controls-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:0.6rem}
+
+.search-row{display:flex;gap:0.5rem;align-items:center}
+.search-box{
+  flex:1;padding:0.55rem 1rem 0.55rem 2.5rem;
+  border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--surface);color:var(--text);
+  font-size:0.85rem;font-family:inherit;
+  outline:none;transition:all var(--transition);
+  position:relative;
+}
+.search-box:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.search-box::placeholder{color:var(--text-muted)}
+.search-wrapper{position:relative;flex:1}
+.search-icon{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  color:var(--text-muted);pointer-events:none;font-size:0.85rem;
+}
+
+.my-schedule-btn{
+  padding:0.55rem 1rem;border-radius:var(--radius);
+  border:1px solid var(--border);background:var(--surface);
+  color:var(--text-secondary);font-size:0.8rem;font-weight:500;
+  cursor:pointer;transition:all var(--transition);
+  display:flex;align-items:center;gap:6px;
+  white-space:nowrap;font-family:inherit;
+}
+.my-schedule-btn:hover{border-color:var(--border-hover);color:var(--text)}
+.my-schedule-btn.active{
+  background:var(--accent);border-color:var(--accent);color:white;
+}
+.schedule-count{
+  background:rgba(255,255,255,0.15);padding:1px 7px;border-radius:100px;
+  font-size:0.7rem;font-weight:600;
+}
+.my-schedule-btn.active .schedule-count{background:rgba(255,255,255,0.25)}
+
+.filters-row{display:flex;gap:0.35rem;flex-wrap:wrap;align-items:center}
+.day-btn{
+  padding:0.4rem 0.85rem;border-radius:100px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--text-secondary);font-size:0.75rem;font-weight:500;
+  cursor:pointer;transition:all var(--transition);
+  font-family:inherit;white-space:nowrap;
+}
+.day-btn:hover{border-color:var(--border-hover);color:var(--text)}
+.day-btn[data-day="16"].active{background:var(--day16);border-color:var(--day16);color:white}
+.day-btn[data-day="17"].active{background:var(--day17);border-color:var(--day17);color:white}
+.day-btn[data-day="18"].active{background:var(--day18);border-color:var(--day18);color:white}
+.day-btn[data-day="19"].active{background:var(--day19);border-color:var(--day19);color:white}
+.day-btn[data-day="20"].active{background:var(--day20);border-color:var(--day20);color:white}
+.day-btn[data-day="all"].active{background:var(--surface-3);border-color:var(--text-muted);color:var(--text)}
+
+.category-filters{display:flex;gap:0.3rem;flex-wrap:wrap;margin-left:auto}
+.cat-btn{
+  padding:0.35rem 0.7rem;border-radius:100px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--text-muted);font-size:0.7rem;font-weight:500;
+  cursor:pointer;transition:all var(--transition);font-family:inherit;
+}
+.cat-btn:hover{border-color:var(--border-hover);color:var(--text-secondary)}
+.cat-btn.active{background:var(--surface-3);border-color:var(--text-muted);color:var(--text)}
+
+/* Stats bar */
+.stats-bar{
+  max-width:1100px;margin:0 auto;
+  padding:0.6rem 1rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.75rem;color:var(--text-muted);
+}
+
+/* Conflict warning */
+.conflict-banner{
+  max-width:1100px;margin:0.5rem auto;
+  padding:0.7rem 1rem;border-radius:var(--radius);
+  background:rgba(214,48,49,0.08);border:1px solid rgba(214,48,49,0.2);
+  color:var(--red);font-size:0.8rem;display:none;
+}
+.conflict-banner.visible{display:block}
+.conflict-banner strong{color:#ff6b6b}
+
+/* Main content */
+main{max-width:1100px;margin:0 auto;padding:0 1rem 3rem}
+
+/* Day section */
+.day-section{margin-bottom:2.5rem}
+.day-label{
+  position:sticky;top:90px;z-index:50;
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.8rem 0;margin-bottom:0.5rem;
+  background:var(--bg);
+}
+.day-dot{
+  width:12px;height:12px;border-radius:50%;flex-shrink:0;
+}
+.day-16 .day-dot{background:var(--day16)}
+.day-17 .day-dot{background:var(--day17)}
+.day-18 .day-dot{background:var(--day18)}
+.day-19 .day-dot{background:var(--day19)}
+.day-20 .day-dot{background:var(--day20)}
+.day-title{
+  font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;
+  letter-spacing:-0.01em;color:var(--text);
+}
+.day-count{
+  font-size:0.75rem;color:var(--text-muted);font-weight:400;
+  margin-left:auto;
+}
+
+/* Time group */
+.time-group{margin-bottom:1.5rem}
+.time-label{
+  display:flex;align-items:center;gap:0.5rem;
+  padding:0.3rem 0;margin-bottom:0.4rem;
+  font-size:0.75rem;font-weight:600;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:0.05em;
+}
+.time-line{flex:1;height:1px;background:var(--border)}
+
+/* Session cards */
+.sessions-grid{display:flex;flex-direction:column;gap:0.4rem}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:0.85rem 1rem;
+  cursor:pointer;
+  transition:all var(--transition);
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  border-radius:3px 0 0 3px;opacity:0.6;transition:opacity var(--transition);
+}
+.card:hover{border-color:var(--border-hover);background:var(--surface-2)}
+.card:hover::before{opacity:1}
+.card.day-16::before{background:var(--day16)}
+.card.day-17::before{background:var(--day17)}
+.card.day-18::before{background:var(--day18)}
+.card.day-19::before{background:var(--day19)}
+.card.day-20::before{background:var(--day20)}
+
+.card.saved{border-color:rgba(108,92,231,0.3);background:rgba(108,92,231,0.04)}
+.card.saved::before{background:var(--accent)!important;opacity:1}
+
+.card.keynote{border-color:rgba(243,156,18,0.2);background:rgba(243,156,18,0.03)}
+.card.keynote::before{background:var(--orange)!important;opacity:1}
+
+.card-header{display:flex;align-items:flex-start;gap:0.6rem}
+.card-title{
+  flex:1;font-size:0.88rem;font-weight:600;color:var(--text);
+  line-height:1.35;letter-spacing:-0.01em;
+}
+.save-star{
+  background:none;border:none;cursor:pointer;
+  font-size:1.1rem;padding:2px;color:var(--text-muted);
+  transition:all var(--transition);flex-shrink:0;line-height:1;
+}
+.save-star:hover{color:var(--accent);transform:scale(1.15)}
+.card.saved .save-star{color:var(--accent)}
+
+.card-meta{
+  display:flex;flex-wrap:wrap;gap:0.6rem;
+  margin-top:0.4rem;font-size:0.75rem;color:var(--text-muted);
+}
+.meta{display:flex;align-items:center;gap:4px}
+.meta svg{width:13px;height:13px;opacity:0.5}
+
+.card-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem}
+.tag{
+  padding:2px 8px;border-radius:100px;
+  font-size:0.65rem;font-weight:500;
+  background:var(--surface-3);color:var(--text-secondary);
+  border:1px solid var(--border);
+}
+.tag.keynote-tag{background:rgba(243,156,18,0.1);color:var(--orange);border-color:rgba(243,156,18,0.2)}
+.tag.official-tag{background:rgba(9,132,227,0.1);color:var(--blue);border-color:rgba(9,132,227,0.2)}
+
+/* Expanded details */
+.card-details{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.3s ease,opacity 0.2s ease;opacity:0;
+}
+.card.expanded .card-details{max-height:600px;opacity:1;margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--border)}
+
+.card-desc{font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:0.7rem}
+
+.speakers-section{}
+.speakers-heading{font-size:0.7rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem}
+.speaker-chips{display:flex;flex-wrap:wrap;gap:0.3rem}
+.speaker-chip{
+  padding:4px 10px;border-radius:100px;
+  background:var(--surface-3);border:1px solid var(--border);
+  font-size:0.72rem;color:var(--text-secondary);
+}
+
+.partner-info{
+  margin-top:0.6rem;font-size:0.72rem;color:var(--text-muted);
+  display:flex;align-items:center;gap:4px;
+}
+.partner-info span{color:var(--text-secondary);font-weight:500}
+
+/* No results */
+.no-results{
+  text-align:center;padding:4rem 1rem;
+  color:var(--text-muted);
+}
+.no-results h3{font-size:1.1rem;color:var(--text-secondary);margin-bottom:0.3rem}
+
+/* Search highlight */
+mark{background:rgba(108,92,231,0.25);color:var(--text);padding:1px 3px;border-radius:3px}
+
+/* Footer */
+footer{
+  text-align:center;padding:2rem 1rem;
+  border-top:1px solid var(--border);
+  font-size:0.75rem;color:var(--text-muted);
+}
+
+/* Responsive */
+@media(max-width:640px){
+  .hero{padding:2rem 1rem 1.5rem}
+  .hero h1{font-size:1.7rem}
+  .day-label{top:80px}
+  .controls-inner{gap:0.5rem}
+  .category-filters{margin-left:0}
+  .card{padding:0.75rem}
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--surface-3);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> Live Tomorrow</div>
+    <h1>AI Impact Summit 2026</h1>
+    <p class="hero-sub">Bharat Mandapam, Pragati Maidan, New Delhi</p>
+    <p class="hero-date">February 16 &ndash; 20, 2026 &middot; 124 Sessions &middot; 5 Days</p>
+  </div>
+</section>
+
+<div class="controls-wrapper" id="controlsWrapper">
+  <div class="controls-inner">
+    <div class="search-row">
+      <div class="search-wrapper">
+        <span class="search-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-box" id="search" placeholder="Search sessions, speakers, topics...">
+      </div>
+      <button class="my-schedule-btn" id="toggleSaved">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        My Schedule
+        <span class="schedule-count" id="scheduleCount">0</span>
+      </button>
+    </div>
+    <div class="filters-row">
+      <button class="day-btn active" data-day="all">All Days</button>
+      <button class="day-btn" data-day="16">Feb 16</button>
+      <button class="day-btn" data-day="17">Feb 17</button>
+      <button class="day-btn" data-day="18">Feb 18</button>
+      <button class="day-btn" data-day="19">Feb 19</button>
+      <button class="day-btn" data-day="20">Feb 20</button>
+      <div class="category-filters">
+        <button class="cat-btn" data-cat="keynote">Keynotes</button>
+        <button class="cat-btn" data-cat="health">Health</button>
+        <button class="cat-btn" data-cat="governance">Governance</button>
+        <button class="cat-btn" data-cat="defence">Defence</button>
+        <button class="cat-btn" data-cat="agriculture">Agriculture</button>
+        <button class="cat-btn" data-cat="skilling">Skilling</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar" id="statsBar"></div>
+<div class="conflict-banner" id="conflictBanner"></div>
+
+<main id="app"></main>
+
+<footer>AI Impact Summit 2026 &middot; Agenda Planner &middot; Bharat Mandapam, New Delhi</footer>
+
+<script>
+const sessions=[
+// Feb 16
+{id:1,title:"Multilingual AI in Universities",time:"9:30 AM",day:16,loc:"West Wing Room No. 6",speakers:["Sameer Gahlot (NIXI)"],desc:"Examines how universities enable multilingual participation through UA, drawing on DIT and TAM frameworks across universities in Asia and Europe.",partner:"National Internet Exchange of India",cats:["governance"]},
+{id:2,title:"Harnessing AI to Transform India's Judicial Ecosystem",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 16",speakers:["Arya Tripathy (Cyril Amarchand Mangaldas)","Dr. Aparajita Bhatt (NLU Delhi)","Mr. Vikas Mahendra (TERES)","Sh. Rajnish Kumar (NeGD)","Sh. Shardul Shroff"],desc:"AI's potential to revolutionise India's judicial system through predictive analytics, case management automation, legal research, and virtual courts.",partner:"National Law University Delhi",cats:["governance"]},
+{id:3,title:"AI and the Future of Skilling: Strengthening Human Capital",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 9",speakers:["Ashish Kulkarni","Dr. Manish Kumar (NSDC)","Narayanan Ramaswamy (KPMG)","Prof. MS Vijay Kumar (MIT)","Shankar Maruwada (EkStep)"],desc:"Building an AI-ready workforce through approaches spanning government, industry, and academia.",partner:"KPMG",cats:["skilling"]},
+{id:4,title:"AI for Road Safety: Data-Driven Solutions",time:"9:30 AM",day:16,loc:"L2 Audi 1",speakers:["Atul Singh (IIT Madras)","Dr. Priyadarshini Natarajan (IIT Madras)","Prof. Venkatesh Balasubramanian (IIT Madras)","Shri V. Umashankar (MoRTH)","Smt. Usha Padhee (Govt of Odisha)"],desc:"Data-driven approaches for understanding crash patterns, predicting risks and enabling proactive road safety interventions across India.",partner:"Centre of Excellence for Road Safety, IIT Madras",cats:[]},
+{id:5,title:"Leadership Talk: Harnessing AI for the Future of Learning and Work",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 18",speakers:["Dr. Matteo Zallio (Cambridge)","Mustafa Furniturewala (Coursera)","Rajiv Tandon (BITS Pilani)","Sanjay Jain (Google)","Tapish Bhatt (Coursera)"],desc:"How AI is reshaping global employment, redefining future skills, and the need for continuous, skills-based learning to build resilient talent.",partner:"Coursera India Pvt Ltd",cats:["skilling"]},
+{id:6,title:"From Vision to Action: Scaling Equitable AI Advisory Systems (AGX AI)",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 8",speakers:["Mr. David Bergvinson (DevGlobal)","Mr. Michael Minkoff (Athena Infonomics)","Ms. Julianna Drinan (Gates Foundation)","Ms. Sophie Barrowman (DevGlobal)"],desc:"Interactive session exploring AGX AI as a community of practice for responsibly scaling AI advisory systems in agriculture for small-scale producers.",partner:"DevGlobal",cats:["agriculture"]},
+{id:7,title:"Reimagining Gender in Technology - Safer Digital Futures",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 15",speakers:["Andrea Wojnar (UNFPA)","H.E. May-Elin Stener (Ambassador of Norway)","Mr. Rajiv Makhani","Ms. Arpita Kanjilal (DEF)","Ms. Carolyn Florey (ADB)","Ms. Uthara Ganesh (Snapchat)","Nehaa Chaudhari (Ikigai Law)","Soha Ali Khan (UNFPA)"],desc:"Designing safer digital futures and advancing ethical AI for inclusive platforms, addressing risks for women, girls, and gender-diverse persons.",partner:"UNFPA",cats:["governance"]},
+{id:8,title:"Role of Contextual Norms in Designing Better AI Systems",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 17",speakers:["Amita Yadav (Karya)","Mohit Jain, PhD (Microsoft Research India)","Philipp Zimmer (World Bank)","Sharath Chandra Guntuku, PhD (UPenn)","Sunny Rai, PhD (UPenn)"],desc:"AI systems deployed across diverse cultural contexts often fail not because of technical limitations, but because they overlook the social norms that govern human behavior.",partner:"University of Pennsylvania",cats:["governance"]},
+{id:9,title:"The Future of Employability in the Age of AI",time:"9:30 AM",day:16,loc:"West Wing Room 4 A",speakers:["Dr. V Anantha Nageswaran (GoI)","Mr. Sanjeev Bhikchandani (InfoEdge)","Mr. Sateesh Seetharamiah (EdgeVerve)","Mr. Vineet Nayar (Sampark Foundation)","Ms. Smita Prakash (ANI)","Prof. Anurag Mairal (Stanford)"],desc:"AI will create more job opportunities but also make many existing jobs redundant, requiring skilling and re-skilling of workers across the spectrum.",partner:"DeepTech4Bharat Foundation",cats:["skilling"]},
+{id:10,title:"Embedding Trust in Innovation: AI Governance and Quality Infrastructure",time:"9:30 AM",day:16,loc:"West Wing Room 4 B",speakers:["Amanda Craig (Microsoft)","Ashutosh Bahuguna (CERT-In)","Chakravathy T Kannan (QCI)","Jagdheesh Manian (Bureau Veritas)"],desc:"Roundtable to shape trusted pathways for AI adoption through governance and quality infrastructure.",partner:"TIC Council",cats:["governance"]},
+{id:11,title:"Inside India's Frontier Lab and Its Global South Impact",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 6",speakers:["Abhishek Upperwal (Soket AI)","Dr. Mayank Singh (IIT Gandhinagar)","Mr. Joseph Joshy (IFSCA)","Mr. Sahil Arora (Qualcomm)","Mr. Sunil Gupta (Yotta)"],desc:"First look at frontier AI developments including a foundation model initiative and its Global South impact.",partner:"Soket Labs",cats:[]},
+{id:12,title:"AI for Smart and Resilient Agriculture: From Research to Solutions",time:"9:30 AM",day:16,loc:"L1 Meeting Room No. 19",speakers:["Cina Lawson (Govt of Togo)","Dr. Carole Caranta (INRAE)","Dr. Thierry Caquet (INRAE)","Dr. Vincent Martin (FAO)","Henri Verdier (Inria Foundation)","Henry Van Burgsteden"],desc:"How AI can support sustainable, efficient, and climate-resilient agriculture, bringing together diverse perspectives.",partner:"Inria",cats:["agriculture"]},
+{id:13,title:"Effective AI Assessments, Verification and Assurance",time:"10:30 AM",day:16,loc:"West Wing Room 4 A",speakers:["Anne McCormick (EY)","Dr. Ansgar Koene (EY)","Dr. Jibu Elias (Mozilla)","Dr. Philip Howard","LEE Wan Sie (Singapore IMDA)","Narayanan Vaidyanathan (ACCA)","Prof. Balaraman Ravindran (IIT Madras)"],desc:"Building an ecosystem for AI system assessments, governance, and risk management. Foundations for responsible confidence in AI.",partner:"EY",cats:["governance"]},
+{id:14,title:"Harnessing AI for Water Resilience and Sustainable Growth",time:"10:30 AM",day:16,loc:"West Wing Room No. 6",speakers:["David Wood (ICfS)","Shruti Kapil (ICFS)","Sujith Nair (FIDE)"],desc:"AI's expanding physical footprint through energy-intensive, water-dependent data centres and digital infrastructure.",partner:"International Centre for Sustainability",cats:[]},
+{id:15,title:"Practical Aspects of Using AI in Daily Life",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 17",speakers:["Prof. Shiva Kakkar (Jaipuria Group)","Prof. Vaibhav Chaudhary (UNICAMP Brazil)","Shri Nirmit Parikh (BlueMachines AI)"],desc:"Hands-on workshop with live demonstrations on using AI for data analysis, making presentations, and drafting documents.",partner:"Apna.co",cats:["skilling"]},
+{id:16,title:"Redesigning the AI Economy",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 8",speakers:["Amitabh Nag (Digital India Bhashini)","Divya Siddarth (Collective Intelligence Project)","Dr. Sunayana Sitaram (Microsoft Research India)","Manu Chopra (Karya)"],desc:"How participatory and ethical data pipelines can support a more inclusive AI ecosystem at national scale.",partner:"Karya",cats:[]},
+{id:17,title:"Standards and Policies for AI in Farmer-Centric Agrifood Systems",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 19",speakers:["Frederic Werner (ITU)","Gopal Patra (CSIR)","Rabi N. Sahoo (ICAR-IARI)","Raghu Chaliganti (Fraunhofer HHI)","Santanu Chaudhury (IIT Delhi)","Volker Klima (German Embassy)"],desc:"Standards and policy foundations for responsibly scaling AI-enabled, farmer-centric agrifood systems.",partner:"Fraunhofer HHI",cats:["agriculture","governance"]},
+{id:18,title:"From Guardrails to Adaptive Governance in the Global South",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 16",speakers:["Dr. Mona Duggal (NIRDH&DS)","Dr. Monika Kochar (DAKSHIN)","Dr. Ricardo Corpuz (Univ of Fiji)","Dr. Sarang Deo (ISB)","Dr. Shalini Garg (Lancet SEA)","Mr. Haitham El-Noush (Norad)","Rado Andriantsimiavona (HealthAI)"],desc:"Governance models for Global South contexts that go beyond static regulation.",partner:"HealthAI",cats:["governance","health"]},
+{id:19,title:"Sovereign AI for National Security: India's Path to Digital Sovereignty",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 9",speakers:["Mandar Kulkarni (Microsoft)","Mr. Martin Willcox (Teradata)","Mr. Pier Stefano (KPMG)","Preet Saxena (Concentrix)","Shri Brijesh Singh IPS","Shri Abhishek Verma (KPMG)","Shri Ajay Singhal (Haryana)"],desc:"Sovereign AI's role in defense modernization, cyber resilience, space and hypersonic domains.",partner:"KPMG",cats:["defence","governance"]},
+{id:20,title:"AI Literacy: Building Skills, Inclusion, and Global Leadership",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 14",speakers:["Lakshmi Misra (The Garage Noida)","Prabhat Kumar (AIforAll Global)","Sourabh Choudhary (AIforAll Global)"],desc:"Addressing the critical AI literacy gap limiting equitable access to AI knowledge across sectors and geographies.",partner:"AIforAll Global",cats:["skilling"]},
+{id:21,title:"AI for Bharat",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 15",speakers:["Mr. Aakrit Vaish (Activate)","Mr. Akshay Chaturvedi (Leverage Edu)","Mr. Amit Kumar (Google)","Mr. Avinash Raghava (SaaSBoomi)","Mr. Jasminder Singh Gulati (Native AI)","Mr. Karthik Reddy (Blume Ventures)"],desc:"How AI is being applied to address context-specific challenges across India.",partner:"Native AI",cats:[]},
+{id:22,title:"Information Integrity as Infrastructure for Trust: Empowering Youth",time:"10:30 AM",day:16,loc:"West Wing Room 4 B",speakers:["Alpesh Shah (IEEE SA)","Gabriela Ramos (IEEE)","Karine Perset (OECD)","Mohammed Misbahuddin (C-DAC)","Moira Patterson (IEEE SA)","Tanya Perelmuter (Fondation Abeona)","Yuko Harayama (IEEE/RIKEN)"],desc:"Addressing risks from generative AI and algorithmic content systems for young users globally.",partner:"IEEE",cats:["governance"]},
+{id:23,title:"Unlocking AI's Potential for Agricultural Innovation and DPI-Enabled Growth",time:"10:30 AM",day:16,loc:"L2 Audi 1",speakers:["Fatema AlMulla","Jagadish Babu (EkStep)","Nidhi Bhasin (Digital Green)","Niriksha Shetty (PxD)","Sanjay Jain (Gates Foundation)"],desc:"How AI supported by digital public infrastructure can strengthen agricultural systems and drive inclusive economic growth.",partner:"Gates Foundation",cats:["agriculture"]},
+{id:24,title:"Roundtable on AI for Decarbonisation and Circularity",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 10",speakers:["Bishakha Bhattacharya (Wipro)","Debajit Palit (Chintan)","Lena Robra (Swissnex)","Mr. Abhishek Gupta (WeVOIS)","Mr. Anand Sri Ganesh (NSRCEL, IIM-B)","Rohan Chhatwal (Maruti Suzuki)"],desc:"How AI can support decarbonisation across supply chains, infrastructure, and waste systems.",partner:"NSRCEL, IIM Bangalore",cats:[]},
+{id:25,title:"Empowering the Human Edge: Building a Future-Ready Workforce",time:"10:30 AM",day:16,loc:"L1 Meeting Room No. 18",speakers:["Aparna Ganesh (Tata Sons)","Idris A. Rai (IUCEA)","Jay Krishnan (Beyond Next Ventures)","Phani Nagarjuna (Telangana AI Hub)","Roma Datta Chobey (Google India)","Sidharth Madaan (BCG)","Vani Kola (Kalaari Capital)"],desc:"Large-scale AI skilling and reskilling initiatives being designed and delivered globally.",partner:"JICA",cats:["skilling"]},
+
+// Feb 17
+{id:26,title:"Tata AI Sakhi Immersion Program",time:"9:00 AM",day:17,loc:"L3 Plenary Hall",speakers:["Srividhya Muralidharan (TCS)"],desc:"1,600 rural women experience AI for the first time in Hindi - hands-on session with artisans, entrepreneurs, and community leaders from six states.",partner:"Tata Consultancy Services",cats:["skilling"]},
+{id:27,title:"AI for Social Good: Impact that Works",time:"9:30 AM",day:17,loc:"L2 Audi 2",speakers:["Aimee Barnes","Asra Khan","Audrey Lorvo","Azeez Gupta","Becky Faith","Brigitte Hoyer Gosselink","David Yanagizawa-Drott","Dean Karlan","Elizabeth Kelly","Fatema AlMulla"],desc:"Day-long research and policy symposium on how AI can meaningfully improve public service delivery.",partner:"J-PAL",cats:[]},
+{id:28,title:"AI for Societal Value: Healthcare and High-Impact Sectors",time:"9:30 AM",day:17,loc:"L1 Meeting Room No. 14",speakers:["Dr. Arif Ahmed Sekh (UiT Norway)","Dr. Gunjan Gupta Govil","Dr. Kiran D. Sekhar","Dr. Swarupa Mitra (Fortis)","Dr. Tanuj Bhatia","Prof. Dilip K. Prasad (UiT Norway)"],desc:"How AI is reshaping healthcare and other high-impact sectors as it moves from research to real-world deployment.",partner:"UiT The Arctic University of Norway",cats:["health"]},
+{id:29,title:"From Research to Reality: Building Safe Health-AI Solutions for India",time:"9:30 AM",day:17,loc:"Sushma Swaraj Bhavan, Shakuntalam Banquet",speakers:["Aarushi Gupta (Digital Future Labs)","Anunaya Jain (Jhpiego)","Dr. Azra Ismail (Emory)","Dr. Taniya Kaul (Myna Mahila)","Prerak Mehta (Dalberg)","Sunandan Madan","Vikas Yadav (Gates Foundation)","Zeel Mehta (Myna Mahila)"],desc:"Workshop driving actionable insights to bridge the gap between research and reality in healthcare AI.",partner:"Myna Mahila Foundation",cats:["health"]},
+{id:30,title:"From AI Innovation to Nation-Building",time:"9:30 AM",day:17,loc:"Sushma Swaraj Bhavan, Nalanda Banquet",speakers:["Prof. S Ravi Kiran (BharatGen)","Dr. Amol Gite (BharatGen)","Mr. Anirudh Srinivasan (BharatGen)","Prof. Ganesh Ramakrishnan (IIT Bombay)"],desc:"Leadership talk and keynotes on AI for economic development and social good.",partner:"BharatGen, TIH IIT Bombay",cats:[]},
+{id:31,title:"From Insights to Action for Resilient, High-Performance Data Centres",time:"9:30 AM",day:17,loc:"L1 Meeting Room No. 6",speakers:["Mr. Ben Kroposki (U.S. DOE NREL)","Mr. Jal Desai (U.S. DOE NREL)","Mr. Reji Kumar (ISGF)","Ms. Jaquelin Cochran (U.S. DOE NREL)"],desc:"Data centers as complex, dynamic loads on modern power systems amid accelerating AI-driven computing demand.",partner:"U.S. DOE National Renewable Energy Laboratory",cats:[]},
+{id:32,title:"Safeguarding Children in India's AI Future",time:"9:30 AM",day:17,loc:"West Wing Room 4 B",speakers:["Ashish Jaiman (Nedl Labs)","Karuna Nain (StopNCII.org)","N.S. Nappinai (Cyber Saathi)","Natasha Jog (Instagram)","Pragya Mishra (OpenAI)"],desc:"Governance choices for children's rights, safety, dignity and development in India's AI strategies.",partner:"Institute for Governance, Policies and Politics",cats:["governance"]},
+{id:33,title:"Mobilizing MDB Financing to Scale High-Impact AI Solutions in Asia",time:"9:30 AM",day:17,loc:"L1 Meeting Room No. 16",speakers:["Antonio Zaballos (ADB)","Arjun Venkatraman (Gates Foundation)","Dr J Ganesan (Govt of Haryana)","Hun Kim (AIIB)","Mahesh Uttamchandani (World Bank)"],desc:"MDB financing to cover substantial upfront and ongoing costs of deploying AI for social good.",partner:"The World Bank",cats:[]},
+{id:34,title:"Building a Trusted and Resilient AI Infrastructure Ecosystem",time:"9:30 AM",day:17,loc:"West Wing Room No. 6",speakers:["Ankit Bose (Nasscom)","Mr. Chengetai Masango (UN)","Mr. Raju Vegesna (Sify)","Ms. Amrita Choudhury (CCAOI)","Ms. Shahana Chaterji"],desc:"Principles and infrastructure for a secure, trusted AI ecosystem.",partner:"Sify Technologies",cats:[]},
+{id:35,title:"Scaling Impact from India's Sovereign AI and Data",time:"9:30 AM",day:17,loc:"L1 Meeting Room No. 10",speakers:["Amit Sheth (IAIRO)","Amith Singhee (IBM)","Ana Paula Assis (IBM)","Rajiv Chetwani (ISRO)","Rishi Bal (BharatGen)","Sandip Patel (IBM)","Shri P S Pradyumna IAS","Shri Abhishek Singh IAS (MeitY)","Tanvi Lall (People+AI)"],desc:"India's indigenous generative AI for local linguistic, cultural, and governance needs while strengthening technology sovereignty.",partner:"IBM",cats:["governance"]},
+{id:36,title:"AI Competitiveness and Innovation: From Insight to Action",time:"9:30 AM",day:17,loc:"L1 Meeting Room No. 15",speakers:["Graham Brookie (Atlantic Council)","Nabiha Syed (Mozilla Foundation)","Ruth Berry (Nvidia)"],desc:"Why speed, coordination, and institutional capacity now define AI leadership.",partner:"Atlantic Council",cats:[]},
+{id:37,title:"From Algorithms to Outcomes: Building AI that Works for People",time:"9:30 AM",day:17,loc:"L2 Audi 2",speakers:["Iqbal Dhaliwal (J-PAL; MIT)","Michael Kremer (Nobel Laureate, U of Chicago)","S. Krishnan IAS (MeitY)"],desc:"Kickoff of 'AI For Social Good: Impact That Works' featuring a Nobel laureate and international researchers.",partner:"J-PAL",cats:[]},
+{id:38,title:"AI Masterclass in Robotics",time:"9:30 AM",day:17,loc:"L1 Meeting Room No. 17",speakers:["Laksh Parthasarthy (TCS)","Naresh Mehta (TCS)"],desc:"Turning strategic AI goals into practical, production-ready solutions for inspection and autonomous material movement.",partner:"TCS",cats:[]},
+{id:39,title:"AI and India's Economic Growth: Sectoral Impact and the Road Ahead",time:"9:30 AM",day:17,loc:"L2 Audi 1",speakers:["CA. Anand Prakash Jangid","CA. Charanjot Singh Nanda (ICAI)","CA. Dayaniwas Sharma (ICAI)","CA. Harpreet Singh","CA. Narasimhan Elangovan","CA. Prabhaw Kumar Agarwalla (ICAI)","CA. Prasanna Kumar D (ICAI)","CA. R. Vittal Raj (ICAI)","CA. Umesh Sharma (ICAI)"],desc:"AI as a catalyst for inclusive economic growth across industry, services, governance, agriculture, finance, healthcare, and MSMEs.",partner:"ICAI",cats:[]},
+{id:40,title:"AI for Impact - Global South Forum: Shared Solutions, Shared Futures",time:"9:30 AM",day:17,loc:"Sushma Swaraj Bhavan, Chanakya Auditorium",speakers:["Lacina Kone (Smart Africa)","Nakul Jain (Wadhwani AI)","Robert Opp (UNDP)","Sunil Wadhwani"],desc:"Sharing what works, and what doesn't, in using AI for public good across the Global South.",partner:"Wadhwani AI",cats:[]},
+{id:41,title:"AI for India's Next Billion: Intergenerational Insights",time:"9:30 AM",day:17,loc:"L1 Meeting Room No. 9",speakers:["Amandeep Singh Gill (UN)","Amitabh Kant (NITI Aayog)","Arunabha Ghosh (CEEW)","Awais Ahmed (Pixxel)","Claire Melamed (UN Foundation)","Kunalika Gautam (UN Foundation)","Ruchira Goyal","Safiya Husain (Karya)","Vishal Tripathi (CEEW)"],desc:"Inclusive and future-ready growth as AI reshapes economies, public services, and governance for nearly 10 billion people.",partner:"United Nations Foundation",cats:[]},
+{id:42,title:"AI in Health: Saving Lives at Scale",time:"10:20 AM",day:17,loc:"L2 Audi 2",speakers:["Aimee Barnes (J-PAL)","Rob Sherman (Meta)","Senthil Kumar IAS (Tamil Nadu)","Shahed Alam (Noora Health)","Ziad Obermeyer (Berkeley)"],desc:"Can AI innovation help in diagnosing silent heart attacks and deliver measurable health gains for underserved populations at scale?",partner:"J-PAL",cats:["health"]},
+{id:43,title:"From Co-Design to Courtroom: Building a Fair Trial Adviser",time:"10:30 AM",day:17,loc:"Sushma Swaraj Bhavan, Nalanda Banquet",speakers:["Daisy Peterson (Oxford)","Lodovica Raparelli (Oxford)","Wassim Hamidouche (Microsoft)"],desc:"How collaborative, human-centred AI can strengthen fair trial guarantees across justice systems.",partner:"Oxford Institute of Technology and Justice",cats:["governance"]},
+{id:44,title:"Scaling Enterprise Transformation in the AI Economy",time:"10:30 AM",day:17,loc:"L2 Audi 1",speakers:["Chinmaya Sharma (InfoEdge Ventures)","Mihir Shukla (Automation Anywhere)","Tejeshwi Sharma (Peak XV)"],desc:"Leading disruptors, VCs, and AI practitioners who have leveraged AI to drive enterprise transformation.",partner:"Bain & Company",cats:[]},
+{id:45,title:"Harnessing AI for Equitable and Resilient Health Systems",time:"10:30 AM",day:17,loc:"West Wing Room 4 A",speakers:["Aparnaa Somanathan (World Bank)","Geetha Manjunath (Niramai)","Kalavathi GV (Siemens Healthineers)","Karthik Adapa (WHO-SEARO)","Kiran Gopal Vaska (NHA)","Mamta Murthi (World Bank)","Pramod Varma","Preetha Reddy"],desc:"How AI can be responsibly scaled to deliver health system impact across populations.",partner:"The World Bank",cats:["health"]},
+{id:46,title:"GenAI Talent Imperative: Building Global Future Workforce",time:"10:30 AM",day:17,loc:"L1 Meeting Room No. 14",speakers:["Dr Abhilasha Gaur (SSC Nasscom)","Emily Bastedo (ISACA)","Indrani Choudhury (Microsoft)","Jagdish Mitra","Neha Jain (GoUP)","Nitin Seth (Incedo)","Pramod P.J. (MeitY)","Prof Jyoti Kumar (IIT Delhi)","Prof. Shyam Rath (AICTE)","Rishikesh Patnakar (NSDC)"],desc:"Shaping the future of AI-ready talent across industry, academia, and government.",partner:"Nasscom FutureSkills Prime",cats:["skilling"]},
+{id:47,title:"Innovation to Impact: AI as a Public Health Gamechanger",time:"10:30 AM",day:17,loc:"L1 Meeting Room No. 19",speakers:["Dr. Bishnu Panigrahi (Fortis)","Dr. V. K. Paul (NITI Aayog)","Mr. Aman Sharma (GoI)","Mr. Aseem Sahu (CDSCO)","Mr. Bharat Sesha (Philips)","Mr. Harsh Mahajan","Mr. Neeraj Jain (PATH)","Mr. Nico Schiettekatte","Mr. Roy Jakobs (Philips)","Ms. Anupriya Patel (MoCF)"],desc:"Health as central to India's socioeconomic progress and healthcare innovation through AI.",partner:"Philips India",cats:["health"]},
+{id:48,title:"The AI-Energy-Finance Trifecta: Future-Proofing India's Datacenters",time:"10:30 AM",day:17,loc:"L1 Meeting Room No. 10",speakers:["Dr. Ashish Kumar Goel IAS (UPPCL)","Jitendra Srivastava IAS (REC)","Mani Khurana (World Bank)","MoeZ Cherif (World Bank)","Sandeep Bandivdekar (Microsoft)","Vrushali Gaud (Google)"],desc:"How accelerating AI adoption drives data center energy demand while creating sustainability opportunities.",partner:"REC Limited",cats:[]},
+{id:49,title:"AI for National Defence",time:"10:30 AM",day:17,loc:"Sushma Swaraj Bhavan, Chanakya Auditorium",speakers:["Mr. Sarjan Shah (Shield AI)","Suhas Gopinath (Globals)"],desc:"Secure by Design principles for AI in national defence, bringing together senior stakeholders.",partner:"Globals ITES Pvt Ltd",cats:["defence"]},
+{id:50,title:"AI for Her: Catalyst Women Leaders Driving Responsible AI",time:"10:30 AM",day:17,loc:"Sushma Swaraj Bhavan, Shakuntalam Banquet",speakers:["Ms Anna Roy (NITI Aayog)","Ms Ivana Bartoletti (Wipro)","Ms Roma Datta Chobey (Google)","Ms Sandhya Varanasi (Schneider)","Ms Sarah E. Kemp (Intel)","Ms Sarika Gulyani (FICCI)","Ms. Deepti Gaur Mukerjee (MoCA)"],desc:"Responsible AI frameworks, mitigation of gender and data biases, translating national AI policies into real-world applications.",partner:"FICCI",cats:["governance"]},
+
+// Feb 18
+{id:51,title:"Operating Models for AI Quality Across Billion-User Markets",time:"9:30 AM",day:18,loc:"Sushma Swaraj Bhavan, Chanakya Auditorium",speakers:["Aneesh Chopra (innovativestate)","Rahul Kapoor (PwC)","Richard Vose (PwC Strategy)","Sarala Jonnalagadda (Google)"],desc:"Quality, cost, and speed challenges as organizations expand AI across languages, markets, and use cases at billion-user scale.",partner:"PwC",cats:[]},
+{id:52,title:"AI in Sustainment: Enhancing Operational Readiness of Military Equipment",time:"9:30 AM",day:18,loc:"L1 Meeting Room No. 10",speakers:["Brig Deepak Kumar","Lt Gen Rajiv Kumar Sahni","Maj Gen Mohit Gandhi","Maj Gen PS Bindra","Maj Gen Shivendra Kumar Bhattacharya","Mr Biswajit Biswas (Tata Elxsi)","Mr. Sreeram Ananthasayanam (Deloitte)","Prof. Sashikumaar Ganesan (IISc)"],desc:"AI for data-driven governance in equipment sustenance, focusing on predictive and prescriptive lifecycle sustainability.",partner:"Indian Army",cats:["defence"]},
+{id:53,title:"Boosting AI Adoption in Global South: Critical Role of Trust",time:"9:30 AM",day:18,loc:"L1 Meeting Room No. 15",speakers:["Denise Wong (Singapore IMDA)","Rebecca Finlay (Partnership on AI)","Terah Lyons (JP Morgan Chase)"],desc:"How trust enables responsible and scalable AI adoption across sectors, especially in emerging economies.",partner:"JPMorganChase",cats:["governance"]},
+{id:54,title:"AI at Scale: Driving Adoption for Indian SMEs & Startups",time:"9:30 AM",day:18,loc:"Sushma Swaraj Bhavan, Nalanda Banquet",speakers:["Ashok Chandak (IESA & SEMI India)","Jyothis Indirabhai (NetraSemi)","Navin Bishnoi (Marvell India)","Preet Yadav (NXP Semiconductors)"],desc:"Adoption, productivity, and market access challenges for SMEs and startups aligned with People, Planet, and Progress.",partner:"IESA",cats:[]},
+{id:55,title:"Global Capital, Local Advantage: India in the AI Race",time:"9:30 AM",day:18,loc:"L1 Meeting Room No. 16",speakers:["Abhishek Shukla (Prosperity7 Ventures)","Sanjay Tugnait (Fairfax Digital)","Shereen Bhan (CNBC-TV18)"],desc:"Translating India's strengths into scalable AI applications for global markets.",partner:"Celesta Capital",cats:[]},
+{id:56,title:"Roundtable on EU-India Collaboration for Twin Transition",time:"9:30 AM",day:18,loc:"L1 Meeting Room No. 17",speakers:["Christian Wickert (Merck)","Clas Neumann (SAP Labs)","Dr. Lovneesh Chanana (FEBI)","Dr. Magnus Ewerbring (Ericsson)","Jürgen Westermeier (FEBI)","Olivier Blum (Schneider)","Roberto Viola (EU Commission)","Sonia Prashar (FEBI)"],desc:"AI's key role in advancing simultaneous digital transformation and sustainability.",partner:"FEBI",cats:["governance"]},
+{id:57,title:"Strengthening Data and AI Collaboratives for Growth",time:"9:30 AM",day:18,loc:"L1 Meeting Room No. 6",speakers:["Alexandru Oprunenco (UNDP)","Ambassador Harry Verweij (Netherlands)","Anna Tumcadóttir (Creative Commons)","Ariane Hildebrandt (BMZ)","Dr. Hwirin Kim (WMO)","Fred Werner (ITU)","Gaurav Godhwani (CivicDataLab)","Kathleen Victoir (Pasteur Network)","Nasubo Ongoma (Qhala)"],desc:"Advancing Data and AI Collaboratives for trusted, actionable data in governance.",partner:"CivicDataLab",cats:["governance"]},
+{id:58,title:"AI and Robotics: The Engine of India's New Industrial Age",time:"9:30 AM",day:18,loc:"L1 Meeting Room No. 9",speakers:["Amit Goel (Nvidia)","Raghu Dharmaraju (ARTPARK)","Shashank Reddy (Evam)"],desc:"How robotics and Physical AI accelerate automation and strengthen Make in India.",partner:"NVIDIA",cats:[]},
+{id:59,title:"Building Sovereign AI Infrastructure: Empowering Citizens, Transforming Nations",time:"9:30 AM",day:18,loc:"L2 Audi 1",speakers:["Calista Redmond","Jigar Halani","John Fanelli","Marc Hamilton","Shanker Trivedi"],desc:"India's rise of Sovereign AI and national AI capability as strategic infrastructure on par with power and telecom.",partner:"NVIDIA",cats:[]},
+{id:60,title:"Defence Perspective in AI",time:"9:30 AM",day:18,loc:"West Wing Room No. 6",speakers:["Dr. Vikram Jayaram (Neuralix Ai)","Lt Gen Harsh Chhibber","Lt Gen Vipun Shinghal","Mrs Madhumita Mohapatra (Deloitte)","Subimal Bhattacharjee"],desc:"AI's transformative role in operational readiness, decision-making, and force modernisation within the Armed Forces.",partner:"Indian Army",cats:["defence"]},
+{id:61,title:"Future of Fair Tech: Addressing Equity, Safety and Accountability",time:"9:30 AM",day:18,loc:"West Wing Room 4 B",speakers:["Damar Juniarto (KONDISI)","Lipika Kapoor (NABU/MIT)","Niki Iliadis (Future Society)","Pauline Charazac (CAIS)","Tess Buckley (techUK)","Vidhi Sharma (Future Shift Labs)"],desc:"How India can translate fairness, safety, and accountability in AI governance across public service delivery.",partner:"Future Shift Labs Foundation",cats:["governance"]},
+{id:62,title:"Building Safe and Trusted AI Infrastructure for Population-Scale AI",time:"9:30 AM",day:18,loc:"L1 Meeting Room No. 19",speakers:["Assaf Azrilevich (Nvidia)","Benedict Macon Cooney (TBI)","Raj Reddy (Carnegie Mellon)","Tapan Sahoo (Maruti Suzuki)","Utkarsh Saxena (AdalatAI)"],desc:"Infrastructure for building trusted AI systems at population scale.",partner:"NVIDIA",cats:[]},
+{id:63,title:"Inaugural Session & Launch of WG Deliverables",time:"9:30 AM",day:18,loc:"L2 Summit Room",speakers:["Abhishek Singh (MeitY)","S. Krishnan (Secretary, MeitY)","Sh. Ashwini Vaishnaw (Minister, MeitY)"],desc:"Overarching vision, priorities, and agenda of the India AI Impact Summit with working group deliverables.",cats:["official"]},
+{id:64,title:"Shaping Equitable AI Transitions",time:"9:50 AM",day:18,loc:"L2 Summit Room",speakers:["Prof. T.G. Sitharam (Chair)","Philippines (Co-Chair)","Rwanda (Co-Chair)"],desc:"People-centred, development-oriented and equitable approaches for workforce transitions in the age of AI.",cats:["official","skilling"]},
+{id:65,title:"Harnessing the Transformative Potential of AI to Empower All",time:"10:25 AM",day:18,loc:"L2 Summit Room",speakers:["Shri. Rajesh Aggarwal (Chair)","Switzerland (Co-Chair)","Nigeria (Co-Chair)"],desc:"How countries can harness AI to advance social empowerment for all sections of society.",cats:["official"]},
+{id:66,title:"AI for the SDGs",time:"10:30 AM",day:18,loc:"L1 Meeting Room No. 14",speakers:["Amandeep Singh Gill (UN ODET)","Kamal Kishore (UN)","Komal Sharma Talwar (XLSCOUT)","Paula Bogantes Zamora (Costa Rica)","Sangbu Kim (World Bank)","Shankar Maruwada (EkStep)","Vilas Dhar (McGovern Foundation)"],desc:"Reframing global development as the 2030 SDG deadline approaches amid economic, social, and geopolitical pressures.",partner:"UN ODET",cats:[]},
+{id:67,title:"Use of AI for Disaster Resilient Infrastructure",time:"10:30 AM",day:18,loc:"West Wing Room No. 6",speakers:["Dr. Manabendra Saharia (IIT Delhi)","Dr. Pradeep Thapliyal (ISRO)","Dr. Srikanta K Panigrahi","Mr. Anshu Sharma (SEEDS)","Ms. Rita Missal (NDMA)","Ms. Samhita R (Resilience AI)","Priyanka Das Rajkakati (VortexIo)"],desc:"AI's role in strengthening resilience of critical infrastructure systems.",partner:"CDRI",cats:[]},
+{id:68,title:"Governing Safe and Responsible AI within DPI",time:"10:30 AM",day:18,loc:"L1 Meeting Room No. 6",speakers:["Alexandria Walden (Google)","H E Harry Verweij (Netherlands)","Juan Carlos Lara (Derechos Digitales)","Norman Schulz (Germany)","Sabhanaz Rashid Diya (Tech Global Institute)","Zach Lampell (ICNL FOC)"],desc:"Safe and responsible AI in Digital Public Infrastructure with focus on algorithmic transparency and human-centred governance.",partner:"Freedom Online Coalition",cats:["governance"]},
+{id:69,title:"Charting India's AI-IP Playbook: Innovation, Rights and National Advantage",time:"10:30 AM",day:18,loc:"Sushma Swaraj Bhavan, Shakuntalam Banquet",speakers:["Anne E. Robinson (IBM)","Dr. Shardul S. Shroff (Shardul Amarchand Mangaldas)"],desc:"AI-generated content, foundation models, and the contested boundaries of authorship, inventorship, and ownership.",partner:"Nasscom",cats:["governance"]},
+{id:70,title:"Responsible AI at Scale: Governance, Integrity, and Cyber Readiness",time:"10:30 AM",day:18,loc:"West Wing Room 4 B",speakers:["Dr. Balaravindran (CeRAI, IIT Madras)","Dr. Subi Chaturvedi (InMobi)","Maj. Vineet Kumar (CyberPeace)","Prof. (Dr.) G.S. Bajpai (NLU Delhi)"],desc:"Practical framework for responsible AI adoption at scale with governance and content integrity safeguards.",partner:"CyberPeace",cats:["governance"]},
+{id:71,title:"Building Sovereign Deep Tech for a Resilient Future",time:"10:30 AM",day:18,loc:"L1 Meeting Room No. 18",speakers:["Antti Vasara (Finland)","Atte Jääskeläinen (Sitra)","Kimmo Lähdevirta","Mari Walls (CSC)","Pasi Toivanen (Nokia)","Petteri Orpo (Finland PM)","Sethu Saveda Suvanam (Reorbit)"],desc:"Pioneering deep tech solutions from innovators, with Finland-India collaboration.",partner:"Embassy of Finland",cats:[]},
+{id:72,title:"AI Transformation in Fintech: From Automation to Intelligence",time:"10:30 AM",day:18,loc:"Sushma Swaraj Bhavan, Chanakya Auditorium",speakers:["Dr Prasad Ramanathan (TIH IIT Bombay)","Mr Harsh Kumar (Poonawalla Fincorp)","Mr Sriram Naganathan (HDFC ERGO)","Prof Dipak Gupta (IIT Bombay)"],desc:"AI's fintech evolution from automation to intelligence enabling smarter decisions, scalable innovation, and risk resilience.",partner:"TIH IIT Bombay",cats:[]},
+{id:73,title:"Towards Multilateral Agreement on Enforcing Red Lines",time:"10:30 AM",day:18,loc:"West Wing Room 4 A",speakers:["Alexandra Givens (CDT)","Anita Gurumurthy (IT for Change)","Guilherme Fitzgibbon (Brazil MFA)","Rumman Chaudhury (Humaine Intelligence)"],desc:"Potential for multilateral agreement on AI governance red lines.",partner:"Ada Lovelace Institute",cats:["governance"]},
+{id:74,title:"Beyond Earth: How AI is Powering the Next Era of Space Exploration",time:"10:30 AM",day:18,loc:"Sushma Swaraj Bhavan, Nalanda Banquet",speakers:["Dr Dipti Patil (MKSSS Cummins)","Dr. Vinod Kumar (IN-SPACe)","Mr Nitish Kumar (URSC, ISRO)","Mr R. Durairaj (IISU, ISRO)","Mr Vinay Simha (Hyspace)","Ms Ishita Ganjoo (URSC, ISRO)"],desc:"AI as a transformative force enabling greater autonomy, efficiency, and scalability in the space sector.",partner:"IN-SPACe",cats:[]},
+
+// Feb 19
+{id:75,title:"Inaugural Session",time:"9:40 AM",day:19,loc:"L3 Plenary Hall",speakers:[],desc:"Official inaugural session of the AI Impact Summit 2026.",cats:["keynote"]},
+{id:76,title:"Keynote: Mukesh Dhirubhai Ambani",time:"11:00 AM",day:19,loc:"L3 Plenary Hall",speakers:["Mukesh Dhirubhai Ambani (Chairman, Reliance)"],desc:"Keynote by the Chairman and Managing Director of Reliance.",cats:["keynote"]},
+{id:77,title:"Fireside Chat: Sunil Bharti Mittal & Shantanu Narayen",time:"11:14 AM",day:19,loc:"L3 Plenary Hall",speakers:["Sunil Bharti Mittal (Founder, Bharti Enterprises)","Shantanu Narayen (CEO, Adobe)","Haslinda Amin (Bloomberg, Moderator)"],desc:"Fireside chat moderated by Bloomberg's Editor at Large.",cats:["keynote"]},
+{id:78,title:"Keynote: Vishal Sikka",time:"11:36 AM",day:19,loc:"L3 Plenary Hall",speakers:["Vishal Sikka (CEO, Vianai)"],desc:"Keynote by the CEO of Vianai.",cats:["keynote"]},
+{id:79,title:"Keynote: Bill Gates",time:"11:50 AM",day:19,loc:"L3 Plenary Hall",speakers:["Bill Gates (Chair, Gates Foundation)"],desc:"Keynote by the Chair of the Gates Foundation.",cats:["keynote"]},
+{id:80,title:"Fireside Chat: Nandan Nilekani & Dario Amodei",time:"12:04 PM",day:19,loc:"L3 Plenary Hall",speakers:["Nandan Nilekani (Co-founder, Infosys)","Dario Amodei (CEO, Anthropic)","Rahul Matthan (Trilegal, Moderator)"],desc:"Fireside chat between the Infosys Co-founder and the Anthropic CEO.",cats:["keynote"]},
+{id:81,title:"Keynote: Rishad Premji",time:"12:26 PM",day:19,loc:"L3 Plenary Hall",speakers:["Rishad Premji (Executive Chairman, Wipro)"],desc:"Keynote by the Executive Chairman of Wipro.",cats:["keynote"]},
+{id:82,title:"Keynote: Sam Altman",time:"12:40 PM",day:19,loc:"L3 Plenary Hall",speakers:["Sam Altman (CEO, OpenAI)"],desc:"Keynote by the CEO of OpenAI.",cats:["keynote"]},
+{id:83,title:"Keynote: Yann LeCun",time:"12:54 PM",day:19,loc:"L3 Plenary Hall",speakers:["Yann LeCun (Executive Chairman, AMI Labs)"],desc:"Keynote by the Executive Chairman of Advanced Machine Intelligence Labs.",cats:["keynote"]},
+{id:84,title:"Keynote: Brad Smith",time:"1:08 PM",day:19,loc:"L3 Plenary Hall",speakers:["Brad Smith (Vice Chair & President, Microsoft)"],desc:"Keynote by the Vice Chair and President of Microsoft.",cats:["keynote"]},
+{id:85,title:"Keynote: Demis Hassabis",time:"1:22 PM",day:19,loc:"L3 Plenary Hall",speakers:["Demis Hassabis (Co-founder & CEO, Google DeepMind)"],desc:"Keynote by the Co-founder and CEO of Google DeepMind.",cats:["keynote"]},
+{id:86,title:"Keynote: Julie Sweet",time:"1:36 PM",day:19,loc:"L3 Plenary Hall",speakers:["Julie Sweet (Chairperson & CEO, Accenture)"],desc:"Keynote by the Chairperson and CEO of Accenture.",cats:["keynote"]},
+{id:87,title:"Keynote: Alexandr Wang",time:"1:50 PM",day:19,loc:"L3 Plenary Hall",speakers:["Alexandr Wang (Chief AI Officer, Meta)"],desc:"Keynote by the Chief AI Officer of Meta.",cats:["keynote"]},
+{id:88,title:"Building India's Next Decade of Innovation",time:"2:00 PM",day:19,loc:"Expo Area, Hall No. 4 - Session Hall 2",speakers:["Sh. Prateek Deshmukh (AIM, NITI Aayog)","Sh. Kavikrut (CEO, T-Hub)","Sh. Kanishka Chatterjee","Sh. Dipanshu Parashar (Virtual Cyber Labs)","Sh. Subodh Sachan (STPI)"],desc:"How incubators, AI, and national innovation missions can power India's next decade of growth.",partner:"STPI & AIM",cats:[]},
+{id:89,title:"Keynote: Roy Jakobs",time:"2:04 PM",day:19,loc:"L3 Plenary Hall",speakers:["Roy Jakobs (CEO, Philips)"],desc:"Keynote by the CEO of Philips.",cats:["keynote"]},
+{id:90,title:"Keynote: Martin Schroeter",time:"2:18 PM",day:19,loc:"L3 Plenary Hall",speakers:["Martin Schroeter (Chairman & CEO, Kyndryl)"],desc:"Keynote by the Chairman and CEO of Kyndryl.",cats:["keynote"]},
+{id:91,title:"Keynote: Jeet Adani",time:"2:32 PM",day:19,loc:"L3 Plenary Hall",speakers:["Jeet Adani (Director, Adani Digital Labs)"],desc:"Keynote by the Director of Adani Digital Labs.",cats:["keynote"]},
+{id:92,title:"Keynote: Olivier Blum",time:"2:46 PM",day:19,loc:"L3 Plenary Hall",speakers:["Olivier Blum (Global CEO, Schneider Electric)"],desc:"Keynote by the Global CEO of Schneider Electric.",cats:["keynote"]},
+{id:93,title:"Keynote: Arthur Mensch",time:"3:00 PM",day:19,loc:"L3 Plenary Hall",speakers:["Arthur Mensch (CEO & Co-founder, Mistral AI)"],desc:"Keynote by the CEO and Co-founder of Mistral AI.",cats:["keynote"]},
+{id:94,title:"Keynote: Rajesh Subramanian",time:"3:14 PM",day:19,loc:"L3 Plenary Hall",speakers:["Rajesh Subramanian (CEO, FedEx)"],desc:"Keynote by the CEO of FedEx.",cats:["keynote"]},
+{id:95,title:"Keynote: Sanjay Mehrotra",time:"3:28 PM",day:19,loc:"L3 Plenary Hall",speakers:["Sanjay Mehrotra (CEO, Micron)"],desc:"Keynote by the CEO of Micron.",cats:["keynote"]},
+{id:96,title:"Keynote: Nikesh Arora",time:"3:42 PM",day:19,loc:"L3 Plenary Hall",speakers:["Nikesh Arora (CEO, Palo Alto Networks)"],desc:"Keynote by the CEO of Palo Alto Networks.",cats:["keynote"]},
+{id:97,title:"Keynote: Ravi Kumar",time:"3:56 PM",day:19,loc:"L3 Plenary Hall",speakers:["Ravi Kumar (CEO, Cognizant)"],desc:"Keynote by the CEO of Cognizant.",cats:["keynote"]},
+{id:98,title:"Keynote: Roshni Nadar Malhotra",time:"4:10 PM",day:19,loc:"L3 Plenary Hall",speakers:["Roshni Nadar Malhotra (Chairperson, HCLTech)"],desc:"Keynote by the Chairperson of HCLTech.",cats:["keynote"]},
+{id:99,title:"Panel Discussion: AI in Emerging Economies",time:"4:24 PM",day:19,loc:"L3 Plenary Hall",speakers:["Cina Lawson (Minister, Togo)","Nezar Patria (Vice Minister, Indonesia)","Amr S. Talaat (Minister, Egypt)","Debjani Ghosh (NITI Aayog, Moderator)"],desc:"Panel on AI adoption in Togo, Indonesia, and Egypt moderated by NITI Aayog Distinguished Fellow.",cats:["keynote"]},
+
+// Feb 20
+{id:100,title:"Keynote: Sundar Pichai",time:"9:30 AM",day:20,loc:"L3 Plenary Hall",speakers:["Sundar Pichai (CEO, Alphabet & Google)"],desc:"Keynote by the CEO of Alphabet and Google.",cats:["keynote"]},
+{id:101,title:"The Innovation Beneath AI: U-India Partnership Powering the AI Era",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 18",speakers:["Jeff Binder (TokenForm)","Prince Dhawan (REC)","Tobias Helbig (NXP)","Tuan Ho (Xfund)","Ujjwal Kumar (Quantum Alliance)","Vrushali Gaud (Google)"],desc:"AI driving creative destruction in infrastructure - energy, critical minerals, compute, and data centres.",partner:"Quantum Alliance",cats:[]},
+{id:102,title:"\u092A\u0922\u093CAI 2.0: Reimagining Indian Education System",time:"9:30 AM",day:20,loc:"Sushma Swaraj Bhavan, Nalanda Banquet",speakers:["Alondra Nelson (IAS)","Pankaj Arora (NCTE)","Pranav Gupta (UC Berkeley)","Yogesh Singh (University of Delhi)"],desc:"Bold vision of education in the age of AI, reimagining entire learning ecosystems beyond incremental adoption.",partner:"Center of Policy Research and Governance",cats:["skilling"]},
+{id:103,title:"Scaling Human Potential in the Age of AI",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 8",speakers:["Anurag Hoon (Manzil Mystics)","Archana Vemulapalli (AMD)","Kirthiga Reddy (OptimizeGeo)","Lakshmi Pratury (INK Global)","Radha Ramaswami Basu (iMerit)"],desc:"How human potential is shaped, scaled, or constrained by AI systems across education, creativity, and enterprise.",partner:"AI Kiran",cats:["skilling"]},
+{id:104,title:"MahaAI: Building Safe, Secure and Smart Governance",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 10",speakers:["Davinder Sandhu (Primus Partners)","Dr. Amit Kapoor (Institute for Competitiveness)","Dr. Anupam Chattopadhyay (NTU)","Dr. Ganesh Ramakrishnan (IIT Bombay)","Mr. Ashish Tewari (Infosys)","Mr. Bhuvnesh Kumar (UIDAI)","Mr. Devroop Dhar (Primus)","Mr. Ranjeet Goswami (TCS)","Mr. Suresh Sethi (Protean eGov)","Mr. Vikas Rastogi (Dept of Agriculture)"],desc:"Maharashtra's approach to building safe, secure and citizen-centric AI governance.",partner:"DIT, Government of Maharashtra",cats:["governance"]},
+{id:105,title:"India's Path to an AGI-Enabling Ecosystem",time:"9:30 AM",day:20,loc:"Sushma Swaraj Bhavan, Shakuntalam Banquet",speakers:["Parth Sarthi (Gan Chariot)","Suvrat Bhooshan (Gan Chariot)"],desc:"Creating an ecosystem capable of supporting frontier-scale AI research in India.",partner:"Gan Chariot",cats:[]},
+{id:106,title:"AI for Economic Development and Social Good",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 7",speakers:["Ashwini Vaishnaw (GoI)","Dr. Anshuman Awasthi (Mercedes-Benz R&D)","Dr. Thomas Kuhn (Fraunhofer IESE)","H.E. Dr. Philipp Wildberger (German Embassy)","Mr. Dattatri Salagame (Bosch)","Mr. Murali Nair (Bertelsmann)","Mr. Prashanth Doreswamy (Aumovio)","Ms. Anandi Iyer (Fraunhofer India)","Ms. Sindhu Gangadharan (SAP Labs)"],desc:"Advancing dialogue and collaboration among government, industry and the research community.",partner:"Fraunhofer (India Office)",cats:[]},
+{id:107,title:"Democratizing AI Compute and Digital Data Infrastructures",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 19",speakers:["Chenai Chair (Masakhane)","Faith Waithaka (Africa Data Centres)","Ronnie Chatterji (OpenAI)","Sangbu Kim (World Bank)","Sanjay Jain (Gates Foundation)","Saurabh Garg (MoSPI, GoI)","Yann LeCun (AMILabs)"],desc:"How governments and partners can expand equitable access to compute and digital data infrastructure.",partner:"The World Bank",cats:[]},
+{id:108,title:"Governing Scientific AI at Scale: Safety, Evaluation, and Readiness",time:"9:30 AM",day:20,loc:"West Wing Room 4 B",speakers:["Dr. Geetha Raju (CeRAI, IIT Madras)","Dr. Suryesh Kumar Namdeo (IISc)","Shyam Krishna (RAND EU)"],desc:"Safety, evaluation, and governance frameworks adapted and stress-tested through scientific AI use cases.",partner:"RAND Europe",cats:["governance"]},
+{id:109,title:"Blueprint to Accelerate India's AI Success",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 6",speakers:["Hon'ble Shri Jayant Chaudhary Ji (GoI)","Manish Gupta (Dell Technologies)","Mridu Bhandari (Network18)","Rajgopal A S (NxtGen Cloud)","Rajiv Memani (EY)","Rishi Bal (BharatGen)","Vivek Mohindra (Dell Technologies)"],desc:"India at a pivotal stage in its AI journey, aiming to become a global innovation hub.",partner:"Dell Technologies",cats:[]},
+{id:110,title:"Building AI Readiness: From Compute to Capability",time:"9:30 AM",day:20,loc:"West Wing Room 4 A",speakers:["Dr. Paneerselvam M (MeitY)"],desc:"How Generative AI has fundamentally transformed requirements for high-performance computing infrastructure.",partner:"AMD",cats:[]},
+{id:111,title:"Welfare for All: Ensuring Equitable AI Growth",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 9",speakers:["Mr. Julian Waits (Rapid7)","Mr. Wilson White (Google)"],desc:"How the world's biggest tech companies can work with governments on equitable AI growth across the largest and oldest democracies.",partner:"APCO",cats:["governance"]},
+{id:112,title:"Collaborative Network on AI",time:"9:30 AM",day:20,loc:"L1 Meeting Room No. 15",speakers:["Beatriz Vasconcellos (UCL/Brazil)","Courtney O'Donnell (Anthropic)","Janet Zhou (Gates Foundation)","Keyzom N. Massally (UNDP & G7 AI Hub)","Saurabh Garg (MoSPI, GoI)","Shalini Kapoor (EkStep)","Shankar Maruwada (EkStep)"],desc:"Access to data, compute, and models remains uneven despite AI's promise for socio-economic transformation.",partner:"Observer Research Foundation",cats:[]},
+{id:113,title:"AI at the Core, 6G at the Edge: India's Next Digital Frontier",time:"9:30 AM",day:20,loc:"Sushma Swaraj Bhavan, Chanakya Auditorium",speakers:["Radhakant Das (TCS)","Rajesh Kumar Pathak (Bharat 6G Alliance)","Sandeep Sharma (Tech Mahindra)","Sanjay Nekkanti (Dhruva Space)"],desc:"India's opportunity at the intersection of AI cognition and 6G real-time sensing.",partner:"Nasscom",cats:[]},
+{id:114,title:"Trustworthy AI for All: Democratizing AI Resources Across the Stack",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 16",speakers:["Carsten Maple (Alan Turing Institute)","Dame Wendy Hall (Univ of Southampton)","Dr Peter Mattson (ML Commons)","Dr Saurabh Garg (GoI)","Harish Iyer (Gates Foundation)","Natasha Crampton (Microsoft)"],desc:"Requirements for sovereign AI and democratizing AI resources across the stack.",partner:"The Alan Turing Institute",cats:["governance"]},
+{id:115,title:"Beyond Technicality: Multidisciplinary AI Governance for Real-World Impact",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 9",speakers:["Dame Wendy Hall","Jeanna Matthews (ACM)","Jibu Elias","John Harvard (TBI)","Merve Hickok (CAIDP)","Neha Kumar (Georgia Tech)","Quentin Lambert (UN ODET)","Virginia Dignum (ACM)","Yannis Ioannidis (ACM)"],desc:"Broadening the AI safety conversation with societal, institutional, and ethical dimensions.",partner:"ACM",cats:["governance"]},
+{id:116,title:"AI for India's Digital Public Infrastructure and Industrial Future",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 8",speakers:["Ambika Khurana (Vodafone Idea)","Debashish Chakraborty (GSMA)","Deepak Maheshwari (CSEP)","Mansi Kedia (World Bank)","Rahul Vatts (Bharti Airtel)"],desc:"Telecom networks becoming the intelligent backbone of Digital Public Infrastructure.",partner:"GSMA",cats:[]},
+{id:117,title:"Scaling Trusted AI: France-India Innovation Bridges",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 18",speakers:["Arthur Mensch (Mistral AI)","Arun Sadheesh (TNP)","Naila Giovanni (Technip Energies)","Sandeep Kumar Saxena (HCL Tech)","Valerian Giesz (Quandela)"],desc:"Indo-French collaboration to advance trusted, responsible, and scalable AI.",partner:"Business France",cats:[]},
+{id:118,title:"Multistakeholder Partnerships for Thriving AI Ecosystems",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 10",speakers:["Dr. Bärbel Kofler (German BMZ)","Nakul Jain (Wadhwani AI)","Robert Opp (UNDP)","Srini Tallapragada (Salesforce)"],desc:"Multi-stakeholder collaboration on Responsible AI for inclusive ecosystems and sustainable development.",partner:"German Federal Ministry BMZ",cats:["governance"]},
+{id:119,title:"Building Blocks for National AI Strategy and Implementation",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 7",speakers:["Atsushi Yamanka (JICA)","Dr. Hoda Baraka (Egypt/Cairo Univ)","Kavita Bhatia (IndiaAI)","Laura Gilbert (TBI)","Phani Nagarjuna (Telangana AI Hub)","Saibal Chakraborty (BCG)","Suha Kayum (PIF, Saudi Arabia)"],desc:"Real-world strategies for scaling AI responsibly across nations.",partner:"JICA",cats:["governance"]},
+{id:120,title:"Responsible AI in Action: How Global Enterprises Build Trust at Scale",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 6",speakers:["Mr. Ankit Bose (Nasscom)","Mr. Manish Gupta (Google DeepMind)","Mr. Sunil Abraham (Meta)","Mr. Syed Ahmed (Infosys)","Ms. Geeta Gurnani (IBM)"],desc:"How trust plays a central role in enabling sustainable AI innovation across industries.",partner:"Infosys",cats:["governance"]},
+{id:121,title:"Rightsizing Governance in an AI-Driven World",time:"10:30 AM",day:20,loc:"West Wing Room 4 B",speakers:["Isabella Wilkinson (Chatham House)","Melika Carroll (Cohere)","Navrina Singh (Credo)","Raffi Krikorian (Mozilla)","Rajesh Nambiar (Nasscom)","Sabina Ciofu (techUK)"],desc:"Using AI for real-world impact, bridging digital divides, and supporting inclusive growth.",partner:"techUK",cats:["governance"]},
+{id:122,title:"Scaling Climate Solutions: Data, AI, and India's Energy Transformation",time:"10:30 AM",day:20,loc:"West Wing Room 4 A",speakers:["Akhilesh Magal (Climate Dot)","Dr. Cormekki Whitley (data.org)","Dr. Priya Donti (MIT)","Karan Shah (Artha India)","Priyank Hirani (data.org)","Srinivas Krishnaswamy (Vasudha)","Swetha Ravi Kumar (FSR Global)"],desc:"Open data and AI to strengthen climate resilience and help India meet its net zero target by 2070.",partner:"data.org",cats:[]},
+{id:123,title:"AI Literacy and Building for Children in a Digital Age",time:"10:30 AM",day:20,loc:"L1 Meeting Room No. 14",speakers:["Atish Joshua Gonsalves (LEGO Education)","Dr. Saadhna Panday (UNICEF India)","Richa Menke (LEGO Group)","Tom Hall (LEGO Education)"],desc:"Minimizing AI's negative impacts on children while building literacy and attention to positive possibilities.",partner:"The LEGO Group",cats:["skilling"]},
+{id:124,title:"AI and Workforce Transformation: India's Roadmap to Global Competitiveness",time:"10:30 AM",day:20,loc:"Sushma Swaraj Bhavan, Chanakya Auditorium",speakers:["Mr Ravi Aurora (Mastercard)","Mr Srikrishna Ramakarthikeyan (Hexaware)","Mr Vishnu R Dusad (Nucleus Software)","Ms Sangeeta Gupta (Nasscom)"],desc:"How AI is reshaping jobs, skills, and productivity, and how India can convert disruption into strategic advantage.",partner:"Nasscom",cats:["skilling"]},
+];
+
+const CAT_KEYWORDS={
+  keynote:s=>s.cats.includes('keynote'),
+  health:s=>s.cats.includes('health')||/health|medical|pharma/i.test(s.title+s.desc),
+  governance:s=>s.cats.includes('governance')||/governance|policy|regulation|trust|responsible/i.test(s.title),
+  defence:s=>s.cats.includes('defence')||/defence|defense|military|army/i.test(s.title+s.desc),
+  agriculture:s=>s.cats.includes('agriculture')||/agri|farm|food/i.test(s.title+s.desc),
+  skilling:s=>s.cats.includes('skilling')||/skill|workforce|talent|education|literacy|learning/i.test(s.title),
+};
+
+let saved=JSON.parse(localStorage.getItem('ai_summit_saved')||'[]');
+let activeDay='all';
+let activeCat='';
+let query='';
+let showSaved=false;
+
+const persist=()=>localStorage.setItem('ai_summit_saved',JSON.stringify(saved));
+const $=id=>document.getElementById(id);
+
+function toMin(t){const m=t.match(/(\d+):(\d+)\s*(AM|PM)/i);if(!m)return 0;let h=+m[1],mn=+m[2];if(m[3].toUpperCase()==='PM'&&h!==12)h+=12;if(m[3].toUpperCase()==='AM'&&h===12)h=0;return h*60+mn}
+
+function hl(text,q){
+  if(!q||q.length<2)return text;
+  return text.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<mark>$1</mark>');
+}
+
+function toggleSave(id,e){
+  e.stopPropagation();
+  const i=saved.indexOf(id);
+  if(i>-1)saved.splice(i,1);else saved.push(id);
+  persist();render();
+}
+
+function toggleCard(id){
+  const el=$('c'+id);
+  if(el)el.classList.toggle('expanded');
+}
+
+function render(){
+  const q=query.toLowerCase();
+  let list=sessions.filter(s=>{
+    if(showSaved&&!saved.includes(s.id))return false;
+    if(activeDay!=='all'&&s.day!==+activeDay)return false;
+    if(activeCat&&CAT_KEYWORDS[activeCat]&&!CAT_KEYWORDS[activeCat](s))return false;
+    if(q){
+      const h=(s.title+' '+s.speakers.join(' ')+' '+s.desc+' '+(s.partner||'')+' '+s.loc).toLowerCase();
+      return h.includes(q);
+    }
+    return true;
+  });
+
+  const dayNames={16:'Sunday, February 16',17:'Monday, February 17',18:'Tuesday, February 18',19:'Wednesday, February 19',20:'Thursday, February 20'};
+  const days=[16,17,18,19,20];
+  let html='';
+
+  days.forEach(day=>{
+    const ds=list.filter(s=>s.day===day);
+    if(!ds.length)return;
+    ds.sort((a,b)=>toMin(a.time)-toMin(b.time)||a.title.localeCompare(b.title));
+
+    html+=`<section class="day-section day-${day}">`;
+    html+=`<div class="day-label"><div class="day-dot"></div><div class="day-title">${dayNames[day]}</div><div class="day-count">${ds.length} session${ds.length!==1?'s':''}</div></div>`;
+
+    // Group by time
+    const timeGroups={};
+    ds.forEach(s=>{if(!timeGroups[s.time])timeGroups[s.time]=[];timeGroups[s.time].push(s)});
+
+    Object.entries(timeGroups).forEach(([time,ss])=>{
+      html+=`<div class="time-group"><div class="time-label"><span>${time}</span><div class="time-line"></div></div><div class="sessions-grid">`;
+      ss.forEach(s=>{
+        const isSaved=saved.includes(s.id);
+        const isKeynote=s.cats.includes('keynote');
+        html+=`<div class="card day-${s.day} ${isSaved?'saved':''} ${isKeynote?'keynote':''}" id="c${s.id}" onclick="toggleCard(${s.id})">`;
+        html+=`<div class="card-header"><div class="card-title">${hl(s.title,q)}</div>`;
+        html+=`<button class="save-star" onclick="toggleSave(${s.id},event)" title="${isSaved?'Remove':'Save'}">${isSaved?'&#9733;':'&#9734;'}</button></div>`;
+        html+=`<div class="card-meta">`;
+        html+=`<span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${s.loc}</span>`;
+        if(s.speakers.length)html+=`<span class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>${s.speakers.length} speaker${s.speakers.length!==1?'s':''}</span>`;
+        html+=`</div>`;
+        // Tags
+        const tags=[];
+        if(isKeynote)tags.push('<span class="tag keynote-tag">Keynote</span>');
+        if(s.cats.includes('official'))tags.push('<span class="tag official-tag">Official</span>');
+        if(tags.length)html+=`<div class="card-tags">${tags.join('')}</div>`;
+        // Details
+        html+=`<div class="card-details">`;
+        if(s.desc)html+=`<p class="card-desc">${hl(s.desc,q)}</p>`;
+        if(s.speakers.length){
+          html+=`<div class="speakers-section"><div class="speakers-heading">Speakers</div><div class="speaker-chips">`;
+          s.speakers.forEach(sp=>{html+=`<span class="speaker-chip">${hl(sp,q)}</span>`});
+          html+=`</div></div>`;
+        }
+        if(s.partner)html+=`<div class="partner-info">Knowledge Partner: <span>${hl(s.partner,q)}</span></div>`;
+        html+=`</div></div>`;
+      });
+      html+=`</div></div>`;
+    });
+    html+=`</section>`;
+  });
+
+  if(!list.length)html=`<div class="no-results"><h3>No sessions found</h3><p>Try adjusting your search or filters</p></div>`;
+
+  $('app').innerHTML=html;
+  $('statsBar').textContent=`${list.length} of ${sessions.length} sessions`+(saved.length?` \u00b7 ${saved.length} in your schedule`:'');
+  $('scheduleCount').textContent=saved.length;
+
+  // Conflicts
+  const cb=$('conflictBanner');
+  if(showSaved){
+    const sv=sessions.filter(s=>saved.includes(s.id));
+    const g={};sv.forEach(s=>{const k=s.day+'-'+s.time;if(!g[k])g[k]=[];g[k].push(s)});
+    const conflicts=Object.values(g).filter(x=>x.length>1);
+    if(conflicts.length){
+      cb.innerHTML='<strong>Schedule conflicts:</strong> '+conflicts.map(c=>`Feb ${c[0].day} ${c[0].time} \u2014 ${c.map(s=>s.title).join(', ')}`).join(' | ');
+      cb.classList.add('visible');
+    }else cb.classList.remove('visible');
+  }else cb.classList.remove('visible');
+}
+
+// Events
+$('search').addEventListener('input',e=>{query=e.target.value;render()});
+
+document.querySelectorAll('.day-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.day-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');activeDay=b.dataset.day;render();
+  });
+});
+
+document.querySelectorAll('.cat-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    if(b.classList.contains('active')){b.classList.remove('active');activeCat='';}
+    else{document.querySelectorAll('.cat-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');activeCat=b.dataset.cat;}
+    render();
+  });
+});
+
+$('toggleSaved').addEventListener('click',()=>{
+  showSaved=!showSaved;
+  $('toggleSaved').classList.toggle('active',showSaved);
+  render();
+});
+
+// Scroll effect
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(!ticking){window.requestAnimationFrame(()=>{
+    $('controlsWrapper').classList.toggle('scrolled',window.scrollY>100);
+    ticking=false;
+  });ticking=true;}
+});
+
+render();
+</script>
+</body>
+</html>
